@@ -1,0 +1,66 @@
+.productionCalc {
+    color: #222;
+    font-size: 42px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.unit {
+    background-color: #bbb;
+    /* padding: 5px 0; */
+    display: grid;
+    grid-template-columns: [name] 120px [oil] 60px [steel] 60px [osr] 60px [total] 80px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.unit > * {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.unit-ARM, .unit-BMR, .unit-BB {
+    margin-bottom: 10px;
+}
+
+.unit-empty {
+    color: #888;
+}
+
+.unit-total {
+    font-weight: bold;
+}
+
+.unit__name {
+    border: 0 none;
+    font-size: inherit;
+    background: none;
+    text-align: left;
+    font-weight: bold;
+}
+
+.unit__cost {
+    color: inherit;
+    text-align: center;
+    font-size: 42px;
+    padding: 5px;
+}
+
+.unit__cost_oil {
+    background-color: #df8f8f;
+}
+
+.unit__cost_steel {
+    background-color: #8f92df;
+}
+
+.unit__cost_osr {
+    background-color: #dfd88f;
+}
+
+.unit__amount {
+    border: 0 none;
+    background: none;
+    font-weight: bold;
+}
