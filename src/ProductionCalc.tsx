@@ -79,7 +79,15 @@ function UnitRow(props: { unitName: UnitName, amount: number, onAdd: () => void,
     return (
 
 <div key={unit.name} className={['unit', `unit-${unitName}`, amount ? '' : 'unit-empty'].join(' ')}>
-            <button className='unit__name' onClick={onAdd} style={{ color: unit.color}}>{unit.name}</button>
+            <button className='unit__name' onClick={onAdd} style={{ color: unit.color}}>
+                <div className={`unit__shape_${unitName.toLowerCase()}`}>
+                    <div>
+                        <div>
+                            {unit.name}
+                        </div>
+                    </div>
+                </div>
+            </button>
             <Cost type='oil' cost={unit.cost.oil} amount={amount} />
             <Cost type='steel' cost={unit.cost.steel} amount={amount} />
             <Cost type='osr' cost={unit.cost.osr} amount={amount} />
