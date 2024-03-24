@@ -106,11 +106,8 @@ body {
     background: #37330b none;
 }
 
-.unit__shape_inf > div > div,
-.unit__shape_art > div > div,
-.unit__shape_arm > div > div,
-.unit__shape_ftr > div > div,
-.unit__shape_bmr > div > div {
+.unit-land .unit__shape_inner2,
+.unit-air .unit__shape_inner2 {
     width: 50px;
     height: 50px;
     display: flex;
@@ -120,99 +117,297 @@ body {
 }
 
 /*          INF ART ARM         */
-.unit__shape_inf,
-.unit__shape_inf,
-.unit__shape_inf {
+.unit-land .unit__shape {
     border-radius: 3px;
     overflow: hidden;
 }
-.unit__shape_inf > div,
-.unit__shape_art > div,
-.unit__shape_arm > div {
+.unit-land .unit__shape_inner1 {
     border: 3px solid;
 }
 
 /*          INF         */
-.unit__shape_inf {
+.unit-inf .unit__shape {
     border: 1px solid hsl(49, 83%, 25%);
 }
-.unit__shape_inf > div {
+.unit-inf .unit__shape_inner1 {
     border-image: linear-gradient(135deg, hsl(49, 83%, 55%), hsl(30, 83%, 35%), hsl(21, 82%, 15%)) 1;
 }
-.unit__shape_inf > div > div {
-    border: 1px solid hsl(49, 83%, 45%);
+.unit-inf .unit__shape_inner2 {
+    border: 1px solid hsl(49, 83%, 55%);
     background: hsl(49, 73%, 45%);
+    color: #ffff00;
 }
 
 /*          ART         */
-.unit__shape_art {
+.unit-art .unit__shape {
     border: 1px solid hsl(221, 83%, 25%);
 }
-.unit__shape_art > div {
+.unit-art .unit__shape_inner1 {
     border-image: linear-gradient(135deg, hsl(221, 83%, 55%), hsl(221, 83%, 35%), hsl(221, 82%, 15%)) 1;
 }
-.unit__shape_art > div > div {
+.unit-art .unit__shape_inner2 {
     border: 1px solid hsl(221, 83%, 55%);
     background: hsl(221, 73%, 45%);
     color: rgb(169 219 255);
 }
 
 /*          ARM         */
-.unit__shape_arm {
+.unit-arm .unit__shape {
     border: 1px solid hsl(131, 53%, 25%);
 }
-.unit__shape_arm > div {
+.unit-arm .unit__shape_inner1 {
     border-image: linear-gradient(135deg, hsl(106, 53%, 55%), hsl(131, 53%, 35%), hsl(131, 53%, 15%)) 1;
 }
-.unit__shape_arm > div > div {
+.unit-arm .unit__shape_inner2 {
     border: 1px solid hsl(131, 53%, 55%);
     background: hsl(131, 53%, 45%);
     color: rgb(0 47 0)
 }
 
 /*          FTR BMR         */
-.unit__shape_ftr,
-.unit__shape_bmr {
+.unit-air .unit__shape {
     border-radius: 70px;
     overflow: hidden;
 }
 
-.unit__shape_ftr > div,
-.unit__shape_bmr > div {
+.unit-air .unit__shape_inner1 {
     border: 4px solid;
     border-radius: 70px;
     overflow: hidden;
 }
 
-.unit__shape_ftr > div > div,
-.unit__shape_bmr > div > div {
+.unit-air .unit__shape_inner2 {
     border-radius: 70px;
 }
 
 /*          FTR         */
-.unit__shape_ftr {
-    border: 2px solid hsl(131, 53%, 25%);
+.unit-ftr .unit__shape {
+    border: 1px solid hsl(131, 53%, 25%);
 }
-.unit__shape_ftr > div {
+.unit-ftr .unit__shape_inner1 {
     border-image: linear-gradient(135deg, hsl(106, 53%, 55%), hsl(131, 53%, 35%), hsl(131, 53%, 15%)) 1;
     background: linear-gradient(135deg, hsl(106, 53%, 55%), hsl(131, 53%, 35%), hsl(131, 53%, 15%));
 }
-.unit__shape_ftr > div > div {
+.unit-ftr .unit__shape_inner2 {
     border: 1px solid hsl(131, 53%, 55%);
     background: hsl(131, 53%, 45%);
     color: rgb(0 47 0);
 }
 
 /*          BMR         */
-.unit__shape_bmr {
-    border: 2px solid hsl(0, 53%, 25%);
+.unit-bmr .unit__shape {
+    border: 1px solid hsl(0, 53%, 25%);
 }
-.unit__shape_bmr > div {
+.unit-bmr .unit__shape_inner1 {
     border-image: linear-gradient(135deg, hsl(0, 53%, 55%), hsl(0, 53%, 35%), hsl(0, 53%, 15%)) 1;
     background: linear-gradient(135deg, hsl(0, 53%, 55%), hsl(0, 53%, 35%), hsl(0, 53%, 15%));
 }
-.unit__shape_bmr > div > div {
+.unit-bmr .unit__shape_inner2 {
     border: 1px solid hsl(0, 53%, 55%);
     background: hsl(0, 53%, 45%);
     color: rgb(67 0 0);
 }
+
+/*          SEA         */
+.unit-sea .unit__shape {
+    font-size: 20px;
+}
+.unit-sea .unit__shape_inner2 {
+    width: 50px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.unit-sea .unit__shape {
+    position: relative;
+    padding: 1px;
+}
+.unit-sea .unit__shape_inner1 {
+    position: relative;
+    padding: 3px;
+}
+.unit-sea .unit__shape_inner2 {
+    position: relative;
+}
+
+.unit__shape_sea_left0,
+.unit__shape_sea_right0 {
+    position: absolute;
+    top: 0;
+    border-top: 27px solid transparent;
+    border-bottom: 27px solid transparent;
+}
+
+.unit__shape_sea_left0 {
+    right: 58px;
+}
+.unit__shape_sea_right0 {
+    left: 58px;
+}
+
+.unit__shape_sea_left1,
+.unit__shape_sea_right1 {
+    position: absolute;
+    top: 0;
+    border-top: 26px solid transparent;
+    border-bottom: 26px solid transparent;
+}
+
+.unit__shape_sea_left1 {
+    right: 56px;
+}
+.unit__shape_sea_right1 {
+    left: 56px;
+    
+}
+
+.unit__shape_sea_left2,
+.unit__shape_sea_right2 {
+    position: absolute;
+    top: -1px;
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+}
+
+.unit__shape_sea_left2 {
+    right: 49.5px;
+}
+.unit__shape_sea_right2 {
+    left: 49.5px;
+}
+
+/*          SS         */
+.unit-ss .unit__shape {
+    background: hsl(49, 83%, 25%);
+}
+.unit-ss .unit__shape_inner1 {
+    background: linear-gradient(115deg, hsl(49, 83%, 55%) 30%, hsl(30, 83%, 35%) 50%, hsl(21, 82%, 25%) 70%);
+}
+.unit-ss .unit__shape_inner2 {
+    background: hsl(49, 73%, 45%);
+    border-bottom: 1px solid hsl(49, 83%, 55%);
+    border-top: 1px solid hsl(49, 83%, 55%);
+    color: #ffff00;
+}
+.unit-ss .unit__shape_sea_left0 {
+    border-right: 9px solid hsl(49, 83%, 25%);
+}
+.unit-ss .unit__shape_sea_right0 {
+    border-left: 9px solid hsl(49, 83%, 25%);
+}
+.unit-ss .unit__shape_sea_left1 {
+    border-right: 9px solid hsl(49, 83%, 55%);
+}
+.unit-ss .unit__shape_sea_right1 {
+    border-left: 9px solid hsl(21, 82%, 25%);
+    
+}
+.unit-ss .unit__shape_sea_left2 {
+    border-right: 8px solid hsl(49, 73%, 45%);
+}
+.unit-ss .unit__shape_sea_right2 {
+    border-left: 8px solid hsl(49, 73%, 45%);
+}
+
+/*          CR         */
+.unit-cr .unit__shape {
+    background: hsl(221, 83%, 25%);
+}
+.unit-cr .unit__shape_inner1 {
+    background: linear-gradient(115deg, hsl(221, 83%, 55%) 30%, hsl(221, 83%, 35%) 50%, hsl(221, 82%, 15%) 70%);
+}
+.unit-cr .unit__shape_inner2 {
+    background: hsl(221, 73%, 45%);
+    border-bottom: 1px solid hsl(221, 83%, 55%);
+    border-top: 1px solid hsl(221, 83%, 55%);
+    color: rgb(169 219 255);
+}
+.unit-cr .unit__shape_sea_left0 {
+    border-right: 9px solid hsl(221, 83%, 25%);
+}
+.unit-cr .unit__shape_sea_right0 {
+    border-left: 9px solid hsl(221, 83%, 25%);
+}
+.unit-cr .unit__shape_sea_left1 {
+    border-right: 9px solid hsl(221, 83%, 55%);
+}
+.unit-cr .unit__shape_sea_right1 {
+    border-left: 9px solid hsl(221, 82%, 15%);
+    
+}
+.unit-cr .unit__shape_sea_left2 {
+    border-right: 8px solid hsl(221, 73%, 45%);
+}
+.unit-cr .unit__shape_sea_right2 {
+    border-left: 8px solid hsl(221, 73%, 45%);
+}
+
+/*          CV         */
+.unit-cv .unit__shape {
+    background: hsl(131, 53%, 25%);
+}
+.unit-cv .unit__shape_inner1 {
+    background: linear-gradient(115deg, hsl(106, 53%, 55%) 30%, hsl(131, 53%, 35%) 50%, hsl(131, 53%, 15%) 70%);
+}
+.unit-cv .unit__shape_inner2 {
+    background: hsl(131, 53%, 45%);
+    border-bottom: 1px solid hsl(106, 53%, 55%);
+    border-top: 1px solid hsl(106, 53%, 55%);
+    color: rgb(0 47 0);
+}
+.unit-cv .unit__shape_sea_left0 {
+    border-right: 9px solid hsl(131, 53%, 25%);
+}
+.unit-cv .unit__shape_sea_right0 {
+    border-left: 9px solid hsl(131, 53%, 25%);
+}
+.unit-cv .unit__shape_sea_left1 {
+    border-right: 9px solid hsl(106, 53%, 55%);
+}
+.unit-cv .unit__shape_sea_right1 {
+    border-left: 9px solid hsl(131, 53%, 15%);
+    
+}
+.unit-cv .unit__shape_sea_left2 {
+    border-right: 8px solid hsl(131, 53%, 45%);
+}
+.unit-cv .unit__shape_sea_right2 {
+    border-left: 8px solid hsl(131, 53%, 45%);
+}
+
+/*          BB         */
+.unit-bb .unit__shape {
+    background: hsl(0, 53%, 25%);
+}
+.unit-bb .unit__shape_inner1 {
+    background: linear-gradient(115deg, hsl(0, 53%, 55%) 30%, hsl(0, 53%, 35%) 50%, hsl(0, 53%, 15%) 70%);
+}
+.unit-bb .unit__shape_inner2 {
+    background: hsl(0, 53%, 45%);
+    border-bottom: 1px solid hsl(0, 53%, 55%);
+    border-top: 1px solid hsl(0, 53%, 55%);
+    color: rgb(0 47 0);
+}
+.unit-bb .unit__shape_sea_left0 {
+    border-right: 9px solid hsl(0, 53%, 25%);
+}
+.unit-bb .unit__shape_sea_right0 {
+    border-left: 9px solid hsl(0, 53%, 25%);
+}
+.unit-bb .unit__shape_sea_left1 {
+    border-right: 9px solid hsl(0, 53%, 55%);
+}
+.unit-bb .unit__shape_sea_right1 {
+    border-left: 9px solid hsl(0, 53%, 15%);
+    
+}
+.unit-bb .unit__shape_sea_left2 {
+    border-right: 8px solid hsl(0, 53%, 45%);
+}
+.unit-bb .unit__shape_sea_right2 {
+    border-left: 8px solid hsl(0, 53%, 45%);
+}
+

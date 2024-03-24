@@ -73,25 +73,48 @@ function Cost(props: { type: Resource, cost: number, amount: number }) {
     )
 }
 
+function UnitShape(props: {name: string, type: UnitType, onAdd: () => void}) {
+    const { name, type, onAdd } = props;
+    return (
+        <div className='unit__name' onClick={onAdd}>
+            <div className='unit__shape'>
+                {type == 'SEA' && (<>
+                    <div className='unit__shape_sea_left0' />
+                    <div className='unit__shape_sea_right0' />
+                </>)}
+                <div className='unit__shape_inner1'>
+                    {type == 'SEA' && (<>
+                        <div className='unit__shape_sea_left1' />
+                        <div className='unit__shape_sea_right1' />
+                    </>)}
+                    <div className='unit__shape_inner2'>
+                        {type == 'SEA' && (<>
+                            <div className='unit__shape_sea_left2' />
+                            <div className='unit__shape_sea_right2' />
+                        </>)}
+                        {name}
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
 function UnitRow(props: { unitName: UnitName, amount: number, onAdd: () => void, onSubtract: () => void }) {
     const {unitName, amount, onAdd, onSubtract} = props;
     const unit = units[unitName];
     return (
-
-<div key={unit.name} className={['unit', `unit-${unitName}`, amount ? '' : 'unit-empty'].join(' ')}>
-            <button className='unit__name' onClick={onAdd} style={{ color: unit.color}}>
-                <div className={`unit__shape_${unitName.toLowerCase()}`}>
-                    <div>
-                        <div>
-                            {unit.name}
-                        </div>
-                    </div>
-                </div>
-            </button>
+        <div key={unit.name} className={[
+            'unit',
+            `unit-${unitName.toLowerCase()}`,
+            `unit-${unit.type.toLowerCase()}`,
+            amount ? '' : 'unit-empty'
+        ].join(' ')}>
+            <UnitShape name={unit.name} type={unit.type} onAdd={onAdd} />
             <Cost type='oil' cost={unit.cost.oil} amount={amount} />
             <Cost type='steel' cost={unit.cost.steel} amount={amount} />
             <Cost type='osr' cost={unit.cost.osr} amount={amount} />
-            <button className='unit__cost unit__amount' onClick={onSubtract}>{amount}</button>
+            <div className='unit__cost unit__amount' onClick={onSubtract}>{amount}</div>
         </div>
     )
 };
